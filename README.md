@@ -1,4 +1,5 @@
 Projeto Conceitual – Oficina Mecânica
+
 1️⃣ Objetivo
 
 Criar o esquema conceitual de um sistema de controle e gerenciamento de ordens de serviço em uma oficina mecânica, permitindo registrar informações de clientes, veículos, mecânicos, serviços executados e cálculo de valores com base em mão-de-obra e peças.
@@ -24,6 +25,7 @@ Cada OS possui: número, data de emissão, valor total, status e data prevista d
 Mecânicos possuem: código, nome, endereço e especialidade.
 
 3️⃣ Entidades e Atributos
+
 Entidade	Atributos Principais	Observações
 Cliente	id_cliente (PK), nome, endereço, telefone, email	Cada cliente pode ter múltiplos veículos
 Veículo	id_veiculo (PK), placa, modelo, ano, id_cliente (FK)	Cada veículo pertence a um cliente
@@ -33,6 +35,7 @@ OrdemServico	nro_os (PK), id_veiculo (FK), id_equipe (FK), data_emissao, data_pr
 Servico	id_servico (PK), descricao, valor_mao_obra	Tabela de referência para cálculo
 Peca	id_peca (PK), descricao, valor	Valor das peças utilizadas na OS
 ExecucaoOS	nro_os (FK), id_servico (FK), id_peca (FK), quantidade, valor_total_item	Detalhamento dos serviços e peças usados
+
 4️⃣ Relacionamentos
 
 Cliente → Veículo: 1:N
@@ -62,6 +65,7 @@ Cada mecânico pode estar em mais de uma equipe se necessário.
 O cliente deve autorizar a execução antes da conclusão da OS.
 
 6️⃣ Exemplo de Estrutura em SQL
+
 -- Tabela Cliente
 CREATE TABLE Cliente (
     id_cliente INT PRIMARY KEY,
